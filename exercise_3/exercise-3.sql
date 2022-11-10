@@ -2,10 +2,10 @@
 -- use a LEFT JOIN FROM film onto film_category
 -- use LEFT JOIN FROM film_categor onto category
 SELECT 
-  film_category.film_id, film_category.category_id
+  film.title
 FROM
   film_category
-LEFT JOIN film ON film_category.film_id = film.film_id
-LEFT JOIN category on film_category.category_id = category.category_id
+LEFT JOIN film ON film.film_id = film_category.film_id 
+LEFT JOIN category on category.category_id = film_category.category_id
 WHERE category.name = 'Action'
 
